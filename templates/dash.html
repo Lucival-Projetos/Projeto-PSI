@@ -1,11 +1,11 @@
-{ % extends "base.html" % }
+{% extends "base.html" %}
 
-{ % block titulo % }
+{% block titulo %}
     RuaHole - Conta
-{ % endblock % }
+{% endblock %}
 
-{ % block conteudo % }
+{% block conteudo %}
     <h1>Bem vindo {{user}}</h1>
-
+    <br>
     <a href="{{ url_for('index') }}">Acessar RuaHole</a>
-{ % endblock % }
+{% endblock %}

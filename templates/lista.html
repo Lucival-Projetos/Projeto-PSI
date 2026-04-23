@@ -1,16 +1,10 @@
-{ % extends "base.html" % }
+{% extends "base.html" %}
 
-{ % block titulo % }
+{% block titulo %}
     RuaHole - Lista e Cadastro de Buracos
-{ % endblock % }
+{% endblock %}
 
-{ % block conteudo % }
-    <form action="">
-        <label for="">Nome da Rua</label>
-        <input type="text" placeholder="Escreva o nome da Rua">
-        <select name="" id=""></select>
-        <button>Salvar</button>
-    </form>
+{% block conteudo %}
     <ul>
         <li>
             <h1>Lista de Ruas Emburacadas</h1>
@@ -28,4 +22,4 @@
         </li>
     </ul>
 
-{ % endblock % }
+{% endblock %}

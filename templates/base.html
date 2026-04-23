@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        { % block titulo % }
-        { % endblock % }
+        {% block titulo %}
+        {% endblock %}
     </title>
     <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
 </head>
 <body>
-    { % block conteudo % }
-    { % endblock % }
+    {% block conteudo %}
+    {% endblock %}
     <script src="js/scripts.js"></script>
 </body>
 </html>
