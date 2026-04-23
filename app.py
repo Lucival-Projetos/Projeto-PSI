@@ -3,17 +3,19 @@ from flask import Flask, render_template, request, url_for, redirect
 app = Flask(__name__)
 user = None
 
-@app.route('/')
+@app.route('/', methods=['get', 'post'])
 def index():
+    if not user:
+        return redirect(url_for('cadastro'))
     return render_template("index.html")
 
-@app.route('/cadastro')
-def cadastrar():
+@app.route('/cadastro', methods=['get', 'post'])
+def cadastro():
     if user:
         return redirect(url_for('dash'))
     return render_template('cadastro.html')
 
-@app.route('/login', methods=['post'])
+@app.route('/login', methods=['get', 'post'])
 def login():
     global user
     if user:
@@ -28,7 +30,7 @@ def dash():
         return redirect(url_for('cadastro'))
     return render_template('dash.html', user = user)
 
-@app.route('/logout', methods=['post'])
+@app.route('/logout', methods=['get', 'post'])
 def logout():
     global user
     user = None
