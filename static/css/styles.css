@@ -2,10 +2,124 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 body{
     height: 100vh;
     display: flex;
     width: 100vw;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(231,195,231);
+}
+.erro{
+    border-radius: 20px;
+    background-color: rgb(136, 83, 136);
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgb(59, 35, 59);
+    width: 70%;
+}
+.erro h1{
+    color: red;
+    font-size: 100px;
+}
+.erro p{
+    color: white;
+    font-size: 40px;
+    margin: 2%;
+}
+.botao_voltar{
+    background-color: rgb(59, 35, 59);
+    padding: 1%;
+    border-radius: 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease;
+}
+.botao_voltar:hover{
+    transform: scale(1.1);
+    transition: 300ms;
+    background-color: rgb(36, 21, 36);
+}
+.botao_voltar a{
+    text-decoration: none;
+    color: white;
+}
+.message{
+    width: 50%;
+    border-radius: 20px;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.nenhum_buraco{
+    width: 50%;
+    border-radius: 20px;
+    padding: 0.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 2%;
+}
+.info_buracos{
+    border-radius: 20px;
+    background-color: rgb(136, 83, 136);
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgb(59, 35, 59);
+    gap: 2%;
+    width: 90%;
+    margin: 2%;
+}
+.info_buracos h1{
+    color: white;
+    font-size: 50px;
+}
+.buraco{
+    background-color: rgb(231,195,231);
+    padding: 2%;
+    margin: 1%;
+    border-radius: 20px;
+}
+.lista_buracos{
+    border: solid 2px black;
+    display: flex;
+}
+.botao_crud{
+    background-color: rgb(59, 35, 59);
+    padding: 1%;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease;
+    text-decoration: none;
+    color: white;
+}
+.botao_crud:hover{
+    transform: scale(1.1);
+    transition: 300ms;
+    background-color: rgb(36, 21, 36);
+    text-decoration: none;
+    color: white;
+}
+.botao_crud a{
+    text-decoration: none;
+    color: white;
 }

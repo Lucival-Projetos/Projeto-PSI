@@ -6,26 +6,31 @@
 
 
 {% block conteudo %}
-    <h1> Lista de Ruas Emburacadas </h1>
-    
-    {% if not buracos %}
-        <p> Nenhum buraco relatado ainda. A cidade está lisa! </p>
-    {% else %}
-        {% for buraco in buracos %}
-            <div>
-                <h3> {{buraco.rua}} - {{buraco.gravidade}} </h3>
-                <br>
-                <p> Bairro: {{buraco.bairro}} </p>
-                <br>
-                <p> Referência: {{buraco.referencia}} </p>
-                <br>
-                <a href="{{ url_for('editar', id=buraco.id) }}"> Editar </a>
-                <br>
-                <a href="{{ url_for('deletar', id=buraco.id) }}" > Apagar </a>
-                <br>
+    <div class="info_buracos">
+        <h1> Lista de Ruas Emburacadas </h1>
+        
+        {% if not buracos %}
+            <p class="nenhum_buraco"> Nenhum buraco relatado ainda. A cidade está lisa! </p>
+        {% else %}
+            <div class="lista_buracos">
+                {% for buraco in buracos %}
+                    <div class="buraco">
+                        <h3> {{buraco.rua}} - {{buraco.gravidade}} </h3>
+                        <br>
+                        <p> Bairro: {{buraco.bairro}} </p>
+                        <br>
+                        <p> Referência: {{buraco.referencia}} </p>
+                        <br>
+                        <a class="botao_crud" href="{{ url_for('editar', id=buraco.id) }}"> Editar </a>
+                        <br>
+                        <a class="botao_crud" href="{{ url_for('deletar', id=buraco.id) }}" > Apagar </a>
+                        <br>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-    {% endif %}
-    
-    <a href="{{ url_for('index') }}"> Voltar ao Início </a>
+        {% endif %}
+        <div class="botao_voltar">
+            <a href="{{ url_for('index') }}"> Voltar ao Início </a>
+        </div>
+    </div>
 {% endblock %}
