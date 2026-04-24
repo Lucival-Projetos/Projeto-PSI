@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block titulo %} 
+    RuaHole - Editar Relato 
+{% endblock %}
+
+{% block conteudo %}
+<div>
+    <h1> Editar Relato - {{buraco.id}} </h1>
+    <p> Altere as informações abaixo para atualizar o estado do buraco. </p>
+
+    <form action="{{ url_for('editar', id=buraco.id) }}" method="POST">
+        
+        <label for="rua"> Nome da Rua: </label>
+        <input type="text" name="rua" value="{{ buraco.rua }}" required>
+        <br>
+        <label for="bairro"> Bairro: </label>
+        <input type="text" name="bairro" value="{{ buraco.bairro }}" required>
+        <br>
+        <label for="referencia"> Ponto de referência: </label>
+        <input type="text" name="referencia" value="{{ buraco.referencia }}" required>
+        <br>
+        <label for="gravidade"> Gravidade Atual: {{buraco.gravidade}}</label>
+        <select name="gravidade">
+            <option value="leve" {% if buraco.gravidade == 'leve' %}selected{% endif %}>Leve</option>
+            <option value="media" {% if buraco.gravidade == 'media' %}selected{% endif %}>Média</option>
+            <option value="grave" {% if buraco.gravidade == 'grave' %}selected{% endif %}>Grave</option>
+        </select>
+        <br>
+        <button type="submit"> Salvar Alterações </button>
+        <br>
+        <a href="{{ url_for('exibir_lista') }}"> Cancelar </a>
+    </form>
+</div>
+{% endblock %}

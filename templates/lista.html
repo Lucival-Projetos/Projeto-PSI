@@ -1,25 +1,31 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-    RuaHole - Lista e Cadastro de Buracos
+    RuaHole - Lista de Buracos
 {% endblock %}
 
-{% block conteudo %}
-    <ul>
-        <li>
-            <h1>Lista de Ruas Emburacadas</h1>
-        </li>
-        <li>
-            <div>
-                /*Nome da Rua*/
-            </div>
-            <div>
-                /*Botão para Editar*/
-            </div>
-            <div>
-                /*Botão para Apagar*/
-            </div>
-        </li>
-    </ul>
 
+{% block conteudo %}
+    <h1> Lista de Ruas Emburacadas </h1>
+    
+    {% if not buracos %}
+        <p> Nenhum buraco relatado ainda. A cidade está lisa! </p>
+    {% else %}
+        {% for buraco in buracos %}
+            <div>
+                <h3> {{buraco.rua}} - {{buraco.gravidade}} </h3>
+                <br>
+                <p> Bairro: {{buraco.bairro}} </p>
+                <br>
+                <p> Referência: {{buraco.referencia}} </p>
+                <br>
+                <a href="{{ url_for('editar', id=buraco.id) }}"> Editar </a>
+                <br>
+                <a href="{{ url_for('deletar', id=buraco.id) }}" > Apagar </a>
+                <br>
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <a href="{{ url_for('index') }}"> Voltar ao Início </a>
 {% endblock %}
