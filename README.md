@@ -5,11 +5,12 @@ Este projeto é um site desenvolvido em Python, HTML, CSS & JavaScript.
 O objetivo é possibilitar que o usuário registre buracos que estão presentes em ruas.
 
 # Funcionalidades
-- Permite o usuário relatar e descrever buracos.
+- Permite o usuário relatar e descrever problemas de buracos em ruas.
 - É possível editar e apagar um formulário já enviado.
 - O usuário pode fechar a sessão.
 - Possibilita o usuário vizualizar formulários já enviados.
 - O usuário pode descrever detalhadamente o problema.
+- Verifica se todos os campos foram preenchidos.
 
 # Como rodar
 1. Baixe os arquivos do projeto.
