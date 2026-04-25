@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block conteudo %}
-    <form action="{{ url_for('login') }}" method="POST">
-        <label for="nome"> Usuário </label>
-        <input type="text" name="nome" placeholder="Digite seu nome de usuário" required>
+    <form id="formcadastro" action="{{ url_for('login') }}" method="POST">
+        <label class="lb1" for="nome"> Usuário </label>
+        <input class="inp1" type="text" name="nome" placeholder="Digite seu nome de usuário" required>
 
-        <label for="senha"> Senha </label>
-        <input type="text" name="senha" placeholder="Digite sua senha" required>
+        <label class="lb1" for="senha"> Senha </label>
+        <input class="inp1" type="text" name="senha" placeholder="Digite sua senha" required>
 
-        <button type="submit"> Cadastrar-se </button>
+        <button id="butao" type="submit"> Cadastrar-se </button>
     </form>
 {% endblock %}

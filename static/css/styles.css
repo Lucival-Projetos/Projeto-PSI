@@ -13,10 +13,177 @@ body{
     justify-content: center;
     background-color: rgb(231,195,231);
 }
+#formcadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    background-color: rgb(136, 83, 136);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgb(59, 35, 59);
+    width: 30%;
+    height: 6   0%;
+    margin-top: -8%;
+    padding-bottom: 1%;
+}
+.lb1{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.inp1{
+    width: 80%;
+    height: 15%;
+    padding: 3%;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(231,195,231);
+}
+#butao{
+    background-color: rgb(59, 35, 59);
+    border-radius: 20px;
+    width: 50%;
+    height: 80px;
+    color: white;
+    border: none;
+    margin-top: 2%;
+}
+#titulo{
+    color: black;
+    text-align: center;
+    margin-top: 1%;
+}
+#descricao{
+    background-color: white;
+    font-size: 15px;
+    width: 50%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 20px;
+    margin: auto;
+}
+#logout button{
+    background-color: rgb(59, 35, 59);
+    border-radius: 20px;
+    width: 20%;
+    height: 50px;
+    color: white;
+    border: none;
+    margin-top: 0.5%;
+    margin-left: 40%;
+}
+#titulodesc{
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
+#requisitos{
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+#form2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    background-color: rgb(136, 83, 136);
+    border-radius: 20px;
+}
+.lb2{
+    color: white;
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+.inp2{
+    width: 90%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(231,195,231);
+    margin-bottom: 1%;
+}
+select{
+    width: 80%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(231,195,231);
+}
+#butchones{
+    background-color: rgb(59, 35, 59);
+    border-radius: 20px;
+    width: 50%;
+    color: white;
+    border: none;
+    height: 50px;
+    margin-bottom: 1%;
+}
+input::placeholder{
+    color: black;
+}
+#link{
+    margin-left: -85%;
+}
+#editrelato{
+    color: white;
+    text-align: center;
+    margin-top: 1%;
+    background-color: rgb(59, 35, 59);
+    border-radius: 15px;
+}
+#p1{
+    color: white;
+    text-align: center;
+    margin-top: 1%;
+}
+#form2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    background-color: rgb(136, 83, 136);
+    border-radius: 20px;
+    padding: 2%;
+}
+.lb3{
+    color: white;
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+.inp3{
+    width: 80%;
+    height: 40px;
+    padding: 1%;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(231,195,231);
+    margin-bottom: 1%;
+}
+#enviar{
+    background-color: rgb(59, 35, 59);
+    border-radius: 20px;
+    width: 50%;
+    color: white;
+    border: none;
+    height: 50px;
+    margin-bottom: 1%;
+}
+#linku{
+    margin-left: -80%;
+    color: white;
+}
 .erro{
     border-radius: 20px;
     background-color: rgb(136, 83, 136);
-    padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;

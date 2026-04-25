@@ -6,39 +6,39 @@
 
 {% block conteudo %}
     <div>
-        <h1> Bem Vindos a RuaHole </h1>
+        <h1 id="titulo"> Bem Vindos a RuaHole </h1>
 
-        <p> Aqui vocês podem comunicar aos nossos funcionários a existência de buracos nas ruas de sua cidade, e apartir das informaçõpes iremos adiciona-las a uma lista, e esta que será enviada para as autoridades locais, depois é só aguardar os reparos esperados.</p>
+        <p id="descricao"> Aqui vocês podem comunicar aos nossos funcionários a existência de buracos nas ruas de sua cidade, e apartir das informaçõpes iremos adiciona-las a uma lista, e esta que será enviada para as autoridades locais, depois é só aguardar os reparos esperados.</p>
 
-        <form action="{{url_for('logout')}}" method="POST">
+        <form id="logout" action="{{url_for('logout')}}" method="POST">
             <button type="submit"> Fechar sessão </button>
         </form>
     </div>
 
     <div>
-        <h1> Formulário de chamados: </h1>
-        <h2> Responda as perguntas abaixo para descrever melhor a gravidade do problema </h2>
+        <h1 id="titulodesc"> Formulário de chamados: </h1>
+        <h2 id="requisitos"> Responda as perguntas abaixo para descrever <br> melhor a gravidade do problema </h2>
 
-        <form action="{{ url_for('cadastrar_buraco') }}" method="POST">
-            <label for="rua"> Nome da Rua: </label>
-            <input type="text" name="rua" placeholder="digite o nome rua onde se encontra o buraco..." required>
+        <form id="form2" action="{{ url_for('cadastrar_buraco') }}" method="POST">
+            <label class="lb2" for="rua"> Nome da Rua: </label>
+            <input class="inp2" type="text" name="rua" placeholder="digite o nome rua onde se encontra o buraco..." required>
             <br>
-            <label for="bairro"> Bairro: </label>
-            <input type="text" name="bairro" placeholder="digite o nome do bairro..." required>
+            <label class="lb2" for="bairro"> Bairro: </label>
+            <input class="inp2" type="text" name="bairro" placeholder="digite o nome do bairro..." required>
             <br>
-            <label for="referencia"> Ponto de referência: </label>
-            <input type="text" name="referencia" placeholder="descreva um ponto de referencia proximo ao local da obstrução">
+            <label class="lb2" for="referencia"> Ponto de referência: </label>
+            <input class="inp2" type="text" name="referencia" placeholder="descreva um ponto de referencia proximo ao local da obstrução">
             <br>
-            <label for="gravidade"> Qual a gravidade do buraco? </label>
+            <label class="lb2" for="gravidade"> Qual a gravidade do buraco? </label>
             <select name="gravidade" id="gravidade">
                 <option value="leve"> Leve </option>
                 <option value="media"> Média</option>
                 <option value="grave"> Grave  </option>
             </select>
             <br>
-            <button type="submit"> Enviar Dados </button>
+            <button id="butchones" type="submit"> Enviar Dados </button>
         </form>
         <br>
-        <a href="{{url_for('exibir_lista')}}"> Ver Lista de Buracos </a>
+        <a id="link" href="{{url_for('exibir_lista')}}"> Ver Lista de Buracos </a>
     </div>
 {% endblock %}
