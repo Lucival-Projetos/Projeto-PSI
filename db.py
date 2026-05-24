@@ -1,0 +1,32 @@
+import sqlite3
+
+def criar_conexao():
+    conexao = sqlite3.connect('banco.db')
+    conexao.row_factory = sqlite3.Row
+    return conexao
+
+
+def inicializar_banco():
+    conexao = criar_conexao()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS usuarios (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            email TEXT NOT NULL,
+            senha TEXT NOT NULL
+        )
+    """)
+    cursor.execute("""   
+        CREATE TABLE IF NOT EXISTS buracos (
+            id_buraco INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome_rua TEXT NOT NULL,
+            nome_bairro TEXT NOT NULL,
+            nome_gravidade TEXT NOT NULL,
+            referencial TEXT NOT NULL
+        )
+    """)
+    
+    conexao.commit()
+    conexao.close()

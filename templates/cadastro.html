@@ -1,17 +1,25 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block titulo %}
     RuaHole - Página de Cadastro
 {% endblock %}
 
 {% block conteudo %}
-    <form action="{{ url_for('login') }}" method="POST">
+    <form action="{{ url_for('cadastro') }}" method="POST" id="formCadastro">
         <label for="nome"> Usuário </label>
-        <input type="text" name="nome" placeholder="Digite seu nome de usuário" required>
+        <input type="text" name="nome" placeholder="Digite seu nome de usuário">
+
+        <label for="email"> Email </label>
+        <input type="email" name="email" placeholder="Digite seu email">
 
         <label for="senha"> Senha </label>
-        <input type="text" name="senha" placeholder="Digite sua senha" required>
-
-        <button type="submit"> Cadastrar-se </button>
+        <input type="password" name="senha" placeholder="Digite sua senha">
+        
+        <div>
+            <button type="submit"> Cadastrar-se </button>
+            <br>
+            <a href="{{ url_for('login') }}">Já tenho uma conta</a>
+        </div>
+        
     </form>
 {% endblock %}

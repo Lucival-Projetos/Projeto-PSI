@@ -13,7 +13,7 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
-                <div>
+                <div class="flash">
                     {{message}}
                 </div>
             {% endfor %}
@@ -22,6 +22,5 @@
 
     {% block conteudo %}
     {% endblock %}
-    <script src="js/scripts.js"></script>
 </body>
 </html>
