@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    RuaHole - Página Bloqueada
+{% endblock %}
+
+{% block conteudo %}
+    <div class="erro">
+        <h1>Página Bloqueada</h1>
+        <p>Você pode não ter permissão para acessar esta página.</p>
+        <h1 class="enfeite">X</h1>
+        <a href="{{ url_for('cadastro') }}">Voltar</a>
+    </div>
+{% endblock %}
