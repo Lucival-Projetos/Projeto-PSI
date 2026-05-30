@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    RuaHole - Página de Login
+{% endblock %}
+
+{% block conteudo %}
+    <form action="{{ url_for('login') }}" method="POST">
+        <label for="nome"> Usuário </label>
+        <input type="text" name="nome" placeholder="Digite seu nome de usuário">
+
+        <label for="senha"> Senha </label>
+        <input type="password" name="senha" placeholder="Digite sua senha">
+        <div>
+            <button type="submit"> Entrar</button>
+            <br>
+            <a href="{{ url_for('cadastro') }}">Cadastra-se</a>
+        </div>
+    </form>
+{% endblock %}
