@@ -62,7 +62,7 @@ def cadastrar_buraco():
     nova_gravidade = request.form.get('gravidade')
 
     if lista_buracos:
-        novo_id = len(lista_buracos) + 1
+        novo_id = lista_buracos[-1]['id'] + 1
     else:
         novo_id = 1
     
@@ -88,19 +88,14 @@ def exibir_lista():
         abort(401)
     return render_template('lista.html', buracos = lista_buracos)
 
-@app.route('/deletar/<int:id>')
+@app.route('/deletar/<int:id>', methods=['POST'])
 def deletar(id):
     global lista_buracos
     
-    nova_lista_buracos = []
-    for buraco in lista_buracos:
-        if buraco['id'] != id:
-            nova_lista_buracos.append(buraco)
-    
-    lista_buracos = nova_lista_buracos
+    if not user:
+        abort(401)
 
-    for i, buraco in enumerate(lista_buracos):
-        buraco['id'] = i + 1  
+    lista_buracos = [buraco for buraco in lista_buracos if buraco['id'] != id]
     
     flash("Relato removido e IDs reordenados.", "warning")
     return redirect(url_for('exibir_lista'))
