@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    RuaHole - Lista de Buracos
+{% endblock %}
+
+
+{% block conteudo %}
+    <div class="info_buracos">
+        <h1> Lista de Ruas Emburacadas </h1>
+        
+        {% if not buracos %}
+            <p class="nenhum_buraco"> Nenhum buraco relatado ainda. A cidade está lisa! </p>
+        {% else %}
+            <div class="lista_buracos">
+                {% for buraco in buracos %}
+                    <div class="buraco">
+                        <h3>{{ buraco[1] }} - {{ buraco[3] }}</h3>
+
+                        <p>Bairro: {{ buraco[2] }}</p>
+
+                        <p>Referência: {{ buraco[4] }}</p>
+
+                        <a class="botao_crud" href="{{ url_for('editar', id=buraco[0]) }}">
+                            Editar
+                        </a>
+
+                        <a class="botao_crud" href="{{ url_for('deletar', id=buraco[0]) }}">
+                            Apagar
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="botao_voltar">
+            <a href="{{ url_for('index') }}"> Voltar ao Início </a>
+        </div>
+    </div>
+{% endblock %}
