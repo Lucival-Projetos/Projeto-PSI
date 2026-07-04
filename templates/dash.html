@@ -5,7 +5,21 @@
 {% endblock %}
 
 {% block conteudo %}
-    <h1> Bem vindo {{user}} </h1>
+    <h1> Bem vindo a RuaHole {{user}} </h1>
+    <div class="paragrafo">
+        <h2>Juntos por Ruas Mais Seguras: Comunique a Existência de Buracos na Sua Região!</h2>
+        <p> Zelar pelo bem-estar e pela segurança da nossa equipe vai muito além do ambiente de trabalho, envolve também o caminho que cada um de vocês percorre todos os dias. Sabemos o quanto buracos e vias danificadas podem causar transtornos, prejuízos financeiros com veículos e, acima de tudo, riscos a acidentes.</p>
+        <p>Pensando nisso, criamos este canal direto e colaborativo. Aqui, você pode nos informar sobre a existência de buracos e problemas no asfalto das ruas da sua cidade.</p> 
+        <p>Você reporta, enviando a localização exata (nome da rua, bairro, ponto de referência), a partir das informações recebidas, nossa equipe organizará e atualizará constantemente uma lista detalhada com todos os pontos críticos sinalizados. Esse relatório consolidado será enviado diretamente às autoridades locais e órgãos competentes, exigindo as devidas providências em nome da nossa comunidade.</p>
+        <p>Faça a sua parte! Sua colaboração é fundamental para cobrarmos melhorias e garantirmos um trânsito mais seguro e tranquilo para todos. Participe e ajude a transformar a sua rotina e a da sua cidade!</p>
+    </div>
+    
     <br>
-    <a href="{{ url_for('index') }}">Acessar RuaHole</a>
+
+    <a href="{{ url_for('cadastro_buracos') }}">Acessar RuaHole</a>
+
+    <form class="sair" action="{{url_for('logout')}}" method="POST">
+        <button type="submit"> Fechar sessão </button>
+    </form>
+    
 {% endblock %}
